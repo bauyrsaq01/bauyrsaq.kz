@@ -1,0 +1,2 @@
+# bauyrsaq.kz
+BAUYRSAQ
