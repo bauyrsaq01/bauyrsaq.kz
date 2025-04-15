@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Для адаптивности на мобильных устройствах -->
   <title>Открытка</title>
   <style>
     body {
@@ -20,8 +21,8 @@
     }
 
     .card {
-      width: 480px; /* Увеличили ширину на 60% */
-      height: 320px; /* Увеличили высоту на 60% */
+      width: 480px; /* Размер для десктопа */
+      height: 320px;
       position: relative;
       transform-style: preserve-3d;
       transition: transform 1s;
@@ -69,6 +70,34 @@
       box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
       font-size: 16px;
       color: #444;
+    }
+
+    /* Адаптация для мобильных устройств */
+    @media (max-width: 768px) {
+      .card {
+        width: 80%; /* Уменьшаем ширину до 80% от экрана */
+        height: auto; /* Высота автоматически подстраивается */
+      }
+
+      .card-front {
+        font-size: 18px; /* Уменьшаем размер шрифта для мобильных */
+      }
+
+      .letter {
+        font-size: 14px; /* Уменьшаем шрифт текста */
+        padding: 12px; /* Меньше отступы */
+      }
+    }
+
+    /* Для очень маленьких экранов (например, телефоны в портретном режиме) */
+    @media (max-width: 480px) {
+      .card {
+        width: 90%; /* Уменьшаем до 90% от ширины экрана */
+      }
+
+      .card-front {
+        font-size: 16px; /* Ещё меньше шрифт для малых экранов */
+      }
     }
   </style>
 </head>
